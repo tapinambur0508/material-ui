@@ -304,6 +304,12 @@ class Menu extends Component {
           this.handleMenuItemClick(event, child, index);
           if (child.props.onClick) child.props.onClick(event);
         },
+        onKeyDown: function onKeyPress(event) {
+          if (event.keyCode === 13) {
+            this.handleMenuItemClick(event, child, index);
+            if (child.props.onClick) child.props.onClick(event);
+          }
+        },
         ref: isFocused ? 'focusedMenuItem' : null,
       });
     }
